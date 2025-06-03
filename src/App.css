@@ -68,6 +68,94 @@ button {
   background: none;
   border: 2px solid var(--primaryColor);
 }
+
+/* --------- Header / Nav & Lang Switcher --------- */
+
+/* Container du switcher de langue */
+.lang-switcher {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+/* Boutons du switcher */
+.lang-switcher button {
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--sliver);
+  transition: color 0.3s;
+}
+
+/* État actif (langue sélectionnée) */
+.lang-switcher button.active {
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+
+/* Ajustement : déplacer le switcher dans le flex header */
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Masquer le menu en desktop quand toggle est inactif */
+header .nav a {
+  margin-left: 40px;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+header .nav a:hover {
+  color: var(--primaryColor);
+}
+
+/* Pour mobile : cacher le nav par défaut, et afficher hideMenu */
+@media screen and (max-width: 768px) {
+  /* Le nav classique disparaît */
+  header .nav {
+    display: none;
+  }
+
+  /* Le menu « caché » (hideMenu) s'affiche dans une colonne */
+  .hideMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10vh;       /* juste sous le header */
+    left: 0;
+    width: 100%;
+    background-color: var(--headingColor);
+    z-index: 998;
+  }
+
+  /* Chaque lien prend toute la largeur */
+  .hideMenu a {
+    display: block;
+    padding: 1rem;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hideMenu a:hover {
+    background-color: var(--secondaryBackground);
+    color: var(--primaryColor);
+  }
+
+  /* Afficher le bouton burger */
+  .toggle {
+    display: block;
+  }
+
+  /* Cacher le switcher si besoin (optionnel) */
+  .lang-switcher {
+    display: none;
+  }
+}
+
 /*---------header-------------*/
 header {
   background-color: var(--headingColor);
