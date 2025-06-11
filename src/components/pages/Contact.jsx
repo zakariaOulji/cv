@@ -121,7 +121,7 @@ export const Contact = () => {
           </div>
 
           {/* ======== Partie gauche : info de contact (statique) ======== */}
-          <div className="left">
+          <div className="left1">
             {contact.map((item, idx) => (
               <div className="box" key={idx} data-aos="zoom-in">
                 <i>{item.icon}</i>

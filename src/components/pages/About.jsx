@@ -10,7 +10,7 @@ export const About = () => {
           {about.map((val) => (
             <React.Fragment key={val.id}>
               <div className="left" data-aos="fade-down-right">
-                <img src={val.cover} alt="" />
+                <img src={val.cover} alt="" style={{ maxWidth: '100%', height: 'auto' }} />
               </div>
               <div className="right" data-aos="fade-down-left">
                 <Heading title="À propos de moi" />
